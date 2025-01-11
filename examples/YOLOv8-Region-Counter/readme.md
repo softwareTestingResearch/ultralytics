@@ -1,14 +1,7 @@
 # Regions Counting Using YOLOv8 (Inference on Video)
 
-> **Region Counter** is now part of **[Ultralytics Solutions](https://docs.ultralytics.com/solutions/)**, offering improved features and regular updates. Enjoy improved features and regular updates!
-
-🔗 **[Explore Object Counting in Regions Here](https://docs.ultralytics.com/guides/region-counting/)**
-
-> 🔔 **Notice:**
-
-> The GitHub example will remain available but **will no longer be actively maintained**. For the latest updates and improvements, please use the official [link](https://docs.ultralytics.com/guides/region-counting/). Thank you!
-
-Region counting is a method employed to tally the objects within a specified area, allowing for more sophisticated analyses when multiple regions are considered. These regions can be adjusted interactively using a Left Mouse Click, and the counting process occurs in real time. Regions can be adjusted to suit the user's preferences and requirements.
+- Region counting is a method employed to tally the objects within a specified area, allowing for more sophisticated analyses when multiple regions are considered. These regions can be adjusted interactively using a Left Mouse Click, and the counting process occurs in real time.
+- Regions can be adjusted to suit the user's preferences and requirements.
 
 <div>
 <p align="center">
@@ -57,7 +50,7 @@ python yolov8_region_counter.py --source "path/to/video.mp4" --save-img --weight
 # If you want to detect specific class (first class and third class)
 python yolov8_region_counter.py --source "path/to/video.mp4" --classes 0 2 --weights "path/to/model.pt"
 
-# If you don't want to save results
+# If you dont want to save results
 python yolov8_region_counter.py --source "path/to/video.mp4" --view-img
 ```
 
@@ -80,7 +73,7 @@ Region counting is a computational method utilized to ascertain the quantity of 
 
 **2. Is Friendly Region Plotting Supported by the Region Counter?**
 
-The Region Counting offers the capability to create regions in various formats, such as polygons and rectangles. You have the flexibility to modify region attributes, including coordinates, colors, and other details, as demonstrated in the following code:
+The Region Counter offers the capability to create regions in various formats, such as polygons and rectangles. You have the flexibility to modify region attributes, including coordinates, colors, and other details, as demonstrated in the following code:
 
 ```python
 from shapely.geometry import Polygon
@@ -98,7 +91,9 @@ counting_regions = [
     },
     {
         "name": "YOLOv8 Rectangle Region",
-        "polygon": Polygon([(200, 250), (440, 250), (440, 550), (200, 550)]),  # Rectangle with four points
+        "polygon": Polygon(
+            [(200, 250), (440, 250), (440, 550), (200, 550)]
+        ),  # Rectangle with four points
         "counts": 0,
         "dragging": False,
         "region_color": (37, 255, 225),  # BGR Value

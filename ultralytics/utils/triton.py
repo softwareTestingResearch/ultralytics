@@ -66,7 +66,6 @@ class TritonRemoteModel:
         self.np_input_formats = [type_map[x] for x in self.input_formats]
         self.input_names = [x["name"] for x in config["input"]]
         self.output_names = [x["name"] for x in config["output"]]
-        self.metadata = eval(config.get("parameters", {}).get("metadata", {}).get("string_value", "None"))
 
     def __call__(self, *inputs: np.ndarray) -> List[np.ndarray]:
         """
@@ -76,7 +75,7 @@ class TritonRemoteModel:
             *inputs (List[np.ndarray]): Input data to the model.
 
         Returns:
-            (List[np.ndarray]): Model outputs.
+            List[np.ndarray]: Model outputs.
         """
         infer_inputs = []
         input_format = inputs[0].dtype
